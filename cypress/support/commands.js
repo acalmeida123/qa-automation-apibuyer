@@ -1,21 +1,9 @@
 
-Cypress.Commands.add('getAuthToken', () => {
-  cy.request({
-    method: 'POST',
-    url: 'https://api-homologacao.getnet.com.br/auth/oauth/v2/token',
-    form: true,
-    body: {
-      scope: 'oob',
-      grant_type: 'client_credentials',
-      client_id: Cypress.env('client_id'),
-      client_secret: Cypress.env('client_secret')
-    }
-  }).then((response) => {
-    expect(response.status).to.eq(200);
-    // Cypress.env('authToken', response.body.access_token);
-    cy.wrap(response.body.access_token).as('authToken');
+import GenerateVcnPage from './pages/generateVcnPage';
 
-  });
+Cypress.Commands.add('generateVcn', () => {
+  const generateVcnPage = new GenerateVcnPage();
+  return generateVcnPage.generateVcn()
 });
 
 
