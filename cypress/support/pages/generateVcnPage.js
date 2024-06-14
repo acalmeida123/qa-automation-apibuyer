@@ -1,10 +1,10 @@
 class GenerateVcnPage {
   constructor() {
-    this.url = '/vcn/v2';
+    this.url = 'https://api.dev.bee2pay.com/vcn/v2';
     this.token = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0ZW5hbnRJZCI6InVzLWVhc3QtMTo5ZDJjYmI1ZC0yYTI3LTQ4YjMtYmMwZC02ZTI1MmM2YWRiNTYiLCJ0b2tlbklkIjoiNGE3ZmRhYjctNzY1Ni00YmNmLWIxMzUtNzI0ZDBhNzdlYzAwIn0.O67JEI8GbSP1azadgkfsOqFod1OH7RPAO_8DJczh2C0vx1SBR6JqvjLpqmCwVoyYa8zpbdu3qYvE59UaRD6uNCV5irljkF8l7hmqs_KFdSHlBrm19m9_10S4DzxBB63GAW94Z7hbsALdSonVflsCmutDPj_YyhRdnSgP5E-yTC1T6EO_s42-A5HMT6hfDHDP2aVHHONGh8wjtdTPVqX6B8ZLUUMoKK8k-_XaBA_hhYlOMr2kE7bcWvP3LHHwL4jrnEbOHlRZ-YShcRazWEsbwT-iWQSbtZGCpJUoYQmK33g0y9mNSfZrGRDGNET8wHb9atxEmvWXmM1nBG32Cx_8mg=';
   }
 
-  generateVcn() {
+  createWithAllFields() {
     const body = {
       "echoToken": "ca4b5bea-7d6e-4b9c-bee4-5bbc195bfa41",
       "orderProductType": "hotel",
@@ -14,7 +14,7 @@ class GenerateVcnPage {
       "vcnCreditLimitCurrencyCode": "BRL",
       "vcnExpirationDate": "2024-08-11",
       "vcnTimestamp": "2023-10-03T14:06:18.587121+00:00",
-      "hotelTotalPriceValue": 90.00,
+      "hotelTotalPriceValue": 110.00,
       "hotelTotalPriceCurrencyCode": "BRL",
       "hotelAddress": "Av Paulista n 321",
       "hotelCity": "São Paulo",
@@ -39,7 +39,7 @@ class GenerateVcnPage {
       "hotelDistrict": "Centro",
       "hotelEmail": "Bee2Bee@Bee2Bee.com",
       "hotelExtrasCurrencyCode": "BRL",
-      "hotelExtrasTotalValue": 39.00,
+      "hotelExtrasTotalValue": 50.00,
       "hotelGuestEmail": "jane.doe@personalmail.com",
       "hotelGuestPhone": "11 99555-4321",
       "hotelGuestRegistration": "Bee2Bee-1478963",
@@ -96,6 +96,46 @@ class GenerateVcnPage {
       body: body
     });
   }
+
+
+  createOnlyMandatoryFields() {
+    const body = {
+      "echoToken": "ca4b5bea-7d6e-4b9c-bee4-5bbc195bfa41",
+      "orderProductType": "hotel",
+      "vcnActivationDate": "2024-06-18",
+      "vcnCardHolderName": "JANE DOE",
+      "vcnCreditLimit": 100.00,
+      "vcnCreditLimitCurrencyCode": "BRL",
+      "vcnExpirationDate": "2024-07-11",
+      "vcnTimestamp": "2023-04-12T18:23:18.587121+00:00",
+      "hotelTotalPriceValue": 100.00,
+      "hotelTotalPriceCurrencyCode": "BRL"
+    };
+
+    return cy.request({
+      method: 'POST',
+      url: this.url,
+      headers: {
+        Authorization: this.token,
+        'Content-Type': 'application/json'
+      },
+      body: body
+    });
+  }
+
+
+  getVcnById(vcnId) {
+    const urlWithId = `${this.url}/${vcnId}`;
+
+    return cy.request({
+      method: 'GET',
+      url: urlWithId,
+      headers: {
+        Authorization: this.token,
+        'Content-Type': 'application/json'
+      }
+    });
+  }
 }
 
-export default GenerateVcnPage;
+module.exports = GenerateVcnPage;
