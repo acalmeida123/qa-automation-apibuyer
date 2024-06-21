@@ -101,15 +101,18 @@ class GenerateVcnPage {
   createOnlyMandatoryFields() {
     const body = {
       "echoToken": "ca4b5bea-7d6e-4b9c-bee4-5bbc195bfa41",
+      "apiType": "ICBT",
       "orderProductType": "hotel",
-      "vcnActivationDate": "2024-06-18",
-      "vcnCardHolderName": "JANE DOE",
-      "vcnCreditLimit": 100.00,
+      "vcnActivationDate": "2024-06-22",
+      "vcnCardHolderName": "Teste data de ativação",
+      "vcnCreditLimit": 400.00,
       "vcnCreditLimitCurrencyCode": "BRL",
-      "vcnExpirationDate": "2024-07-11",
+      "vcnExpirationDate": "2024-06-25",
       "vcnTimestamp": "2023-04-12T18:23:18.587121+00:00",
-      "hotelTotalPriceValue": 100.00,
-      "hotelTotalPriceCurrencyCode": "BRL"
+      "hotelTotalPriceValue": 200.00,
+      "hotelTotalPriceCurrencyCode": "BRL",
+      "hotelReservationEndDate": "2024-06-27",
+      "hotelReservationStartDate": "2024-06-20"
     };
 
     return cy.request({
@@ -125,17 +128,14 @@ class GenerateVcnPage {
 
 
   getVcnById(vcnId) {
-    const urlWithId = `${this.url}/${vcnId}`;
-
     return cy.request({
       method: 'GET',
-      url: urlWithId,
+      url: `${this.url}/${vcnId}`,
       headers: {
         Authorization: this.token,
-        'Content-Type': 'application/json'
-      }
+      },
     });
   }
 }
 
-module.exports = GenerateVcnPage;
+export default GenerateVcnPage;
