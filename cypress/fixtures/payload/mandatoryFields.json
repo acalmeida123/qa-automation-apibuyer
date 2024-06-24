@@ -1,0 +1,15 @@
+{
+  "echoToken": "ca4b5bea-7d6e-4b9c-bee4-5bbc195bfa41",
+  "orderProductType": "hotel",
+  "vcnActivationDate": "2024-05-15",
+  "vcnCardHolderName": "JANE DOE",
+  "vcnCreditLimit": 150.00,
+  "vcnCreditLimitCurrencyCode": "BRL",
+  "vcnExpirationDate": "2024-06-11",
+  "vcnTimestamp": "2023-04-12T18:23:18.587121+00:00",
+  "hotelTotalPriceValue": 150.00,
+  "hotelTotalPriceCurrencyCode": "BRL",
+  "hotelReservationEndDate": "2024-06-10",
+  "hotelReservationStartDate": "2024-06-07"
+  }
+  

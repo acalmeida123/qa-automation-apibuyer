@@ -16,7 +16,7 @@ describe('Gerar e consultar cartões', () => {
     });
   });
 
-  it('Devo gerar um cartão com os campos obrigatórios', () => {
+  it.only('Devo gerar um cartão com os campos obrigatórios', () => {
     cy.createOnlyMandatoryFields().then((response) => {
       expect(response.status).to.eq(201);
       vcnId = response.body.vcnId;

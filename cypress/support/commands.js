@@ -1,4 +1,3 @@
-
 import GenerateVcnPage from './pages/generateVcnPage';
 
 Cypress.Commands.add('createWithAllFields', () => {
