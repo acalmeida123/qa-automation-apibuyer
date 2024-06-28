@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "baseUrl": ".",
+    "paths": {
+      "cypress/*": ["cypress/*"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "cypress/plugins",
+    "cypress/support/index.js" // Se você tiver algum arquivo que deseja excluir
+  ]
+}

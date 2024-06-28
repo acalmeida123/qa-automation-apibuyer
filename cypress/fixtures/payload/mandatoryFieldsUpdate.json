@@ -1,0 +1,24 @@
+{
+    "echoToken": "ca4b5bea-7d6e-4b9c-bee4-5bbc195bfa41",
+    "vcnActivationDate": "2024-05-15",
+    "vcnCardHolderName": "JANE DOE",
+    "vcnCreditLimit": 300.00,
+    "vcnCreditLimitCurrencyCode": "BRL",
+    "vcnExpirationDate": "2024-08-11",
+    "vcnTimestamp": "2023-04-12T18:23:18.587121+00:00",
+    "orderProductType": "hotel",
+    "hotelTotalPriceCurrencyCode": "BRL",
+    "hotelTotalPriceValue": 300.00,
+    "hotelTaxesTotalValue": 40.00,
+    "hotelTaxesCurrencyCode": "BRL",
+    "hotelState": "SP",
+    "hotelCity": "São Paulo",
+    "hotelCountryCode": "BR",
+    "hotelGuestFirstName": "JANE",
+    "hotelGuestLastName": "DOE",
+    "hotelName": "Bee2Bee",
+    "hotelReservationEndDate": "2024-07-28",
+    "hotelReservationLocator": "11085-10027",
+    "hotelReservationStartDate": "2024-06-23"
+    }
+    
