@@ -65,7 +65,7 @@ describe('Gerar, consultar e atualizar cartões', () => {
         // console.log("Data de expiração FORMATADA: ", expiredDataFormated);
         // console.log('---------------------------------------------');
 
-        // console.log('Verificando se a data de check-out e expiração sao iguais.');
+         console.log('Verificando se a data de check-out e expiração sao iguais.');
          // debugger;
         if(reservationExpiredAfterCheckout === expiredDataFormated) {
           console.log("A data de check-out + 15 dias é IGUAL a data de expiração");
